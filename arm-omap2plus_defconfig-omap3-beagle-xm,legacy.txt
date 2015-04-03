@@ -1,0 +1,15 @@
+WARNING: CPU: 0 PID: 1 at ../arch/arm/mach-omap2/omap_device.c:922 __omap_device_late_init+0x44/0x64()
+legacy booting deprecated, please update to boot with .dts
+Modules linked in:
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc1 #1
+Hardware name: OMAP3 Beagle Board
+[<c00154d4>] (unwind_backtrace) from [<c0011b40>] (show_stack+0x10/0x14)
+[<c0011b40>] (show_stack) from [<c0584718>] (dump_stack+0x80/0x9c)
+[<c0584718>] (dump_stack) from [<c003db84>] (warn_slowpath_common+0x7c/0xb8)
+[<c003db84>] (warn_slowpath_common) from [<c003dc54>] (warn_slowpath_fmt+0x30/0x40)
+[<c003dc54>] (warn_slowpath_fmt) from [<c0804864>] (__omap_device_late_init+0x44/0x64)
+[<c0804864>] (__omap_device_late_init) from [<c00089e4>] (do_one_initcall+0x80/0x1d8)
+[<c00089e4>] (do_one_initcall) from [<c07f6ea0>] (kernel_init_freeable+0x1fc/0x2d4)
+[<c07f6ea0>] (kernel_init_freeable) from [<c057f730>] (kernel_init+0x8/0xec)
+[<c057f730>] (kernel_init) from [<c000e870>] (ret_from_fork+0x14/0x24)
+---[ end trace 0033b9e54eb1acb5 ]---

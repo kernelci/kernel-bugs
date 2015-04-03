@@ -1,0 +1,14 @@
+WARNING: CPU: 0 PID: 0 at ../arch/arm/kernel/devtree.c:144 arm_dt_init_cpu_maps+0x118/0x1e8()
+DT /cpu 9 nodes greater than max cores 8, capping them
+Modules linked in:
+CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc1 #1
+Hardware name: Hisilicon HiP04 (Flattened Device Tree)
+[<c0215bdc>] (unwind_backtrace) from [<c021165c>] (show_stack+0x10/0x14)
+[<c021165c>] (show_stack) from [<c092d6f0>] (dump_stack+0x78/0x94)
+[<c092d6f0>] (dump_stack) from [<c0247354>] (warn_slowpath_common+0x74/0xb0)
+[<c0247354>] (warn_slowpath_common) from [<c0247424>] (warn_slowpath_fmt+0x30/0x40)
+[<c0247424>] (warn_slowpath_fmt) from [<c0c953d4>] (arm_dt_init_cpu_maps+0x118/0x1e8)
+[<c0c953d4>] (arm_dt_init_cpu_maps) from [<c0c942dc>] (setup_arch+0x638/0x9a0)
+[<c0c942dc>] (setup_arch) from [<c0c91938>] (start_kernel+0x8c/0x3b4)
+[<c0c91938>] (start_kernel) from [<10208074>] (0x10208074)
+---[ end trace cb88537fdc8fa200 ]---

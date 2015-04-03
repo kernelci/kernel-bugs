@@ -1,0 +1,96 @@
+WARNING: CPU: 0 PID: 0 at ../drivers/iommu/dmar.c:829 warn_invalid_dmar+0x8a/0xa0()
+Your BIOS is broken; DMAR reported at address 0!
+BIOS vendor: American Megatrends Inc.; Ver: V1.1; Product Version: 1.0
+Modules linked in:
+CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc1 #1
+Hardware name: MSI MS-7850/Z87-G41 PC Mate(MS-7850), BIOS V1.1 04/26/2013
+000000000000033d ffffffff81e03d48 ffffffff8187fc30 000000000000000e
+ffffffff81e03d98 ffffffff81e03d88 ffffffff8104f292 0000000000001000
+ffffffff820d201c ffffffff820d203c ffffffffff200810 ffffffff81e03eb0
+Call Trace:
+[<ffffffff8187fc30>] dump_stack+0x45/0x57
+[<ffffffff8104f292>] warn_slowpath_common+0x92/0xd0
+[<ffffffff8104f32a>] warn_slowpath_fmt_taint+0x3a/0x40
+[<ffffffff8187a59b>] ? acpi_os_map_iomem+0x23/0x14d
+[<ffffffff813e19da>] warn_invalid_dmar+0x8a/0xa0
+[<ffffffff8138baf8>] ? acpi_tb_acquire_table+0x39/0x66
+[<ffffffff8187a8bc>] dmar_validate_one_drhd+0xdc/0x100
+[<ffffffff813e166a>] dmar_walk_remapping_entries+0x2a/0x140
+[<ffffffff81f2f711>] detect_intel_iommu+0x52/0xd1
+[<ffffffff8187a7e0>] ? acpi_os_unmap_memory+0xf/0xf
+[<ffffffff81ef53ec>] pci_iommu_alloc+0x44/0x6e
+[<ffffffff81f02b54>] mem_init+0x11/0x88
+[<ffffffff81eefdb8>] start_kernel+0x207/0x423
+[<ffffffff81eef9b1>] ? set_init_arg+0x55/0x55
+[<ffffffff81eef5b2>] x86_64_start_reservations+0x2a/0x2c
+[<ffffffff81eef6b4>] x86_64_start_kernel+0x100/0x107
+---[ end trace dbcaea287c89cbe6 ]---
+WARNING: CPU: 3 PID: 1 at ../arch/x86/mm/init.c:658 free_init_pages+0xb3/0xc0()
+Modules linked in:
+CPU: 3 PID: 1 Comm: swapper/0 Tainted: G          I     4.0.0-rc1 #1
+Hardware name: MSI MS-7850/Z87-G41 PC Mate(MS-7850), BIOS V1.1 04/26/2013
+0000000000000292 ffff880216157db8 ffffffff8187fc30 0000000000000011
+0000000000000000 ffff880216157df8 ffffffff8104f292 ffff880216157dd8
+ffff88007fe38fff ffff880080000000 ffffffff81bc05c2 ffff88007fe39000
+Call Trace:
+[<ffffffff8187fc30>] dump_stack+0x45/0x57
+[<ffffffff8104f292>] warn_slowpath_common+0x92/0xd0
+[<ffffffff8104f2e5>] warn_slowpath_null+0x15/0x20
+[<ffffffff81041bd3>] free_init_pages+0xb3/0xc0
+[<ffffffff81f02785>] free_initrd_mem+0x30/0x35
+[<ffffffff81ef1daf>] populate_rootfs+0xf6/0x118
+[<ffffffff81ef1cb9>] ? do_header+0x13d/0x13d
+[<ffffffff810002d9>] do_one_initcall+0x89/0x1b0
+[<ffffffff81ef0115>] kernel_init_freeable+0x141/0x1da
+[<ffffffff81eef902>] ? do_early_param+0x86/0x86
+[<ffffffff81878f70>] ? rest_init+0x80/0x80
+[<ffffffff81878f79>] kernel_init+0x9/0xf0
+[<ffffffff818895ac>] ret_from_fork+0x7c/0xb0
+[<ffffffff81878f70>] ? rest_init+0x80/0x80
+---[ end trace dbcaea287c89cbe7 ]---
+WARNING: CPU: 2 PID: 25 at ../drivers/gpu/drm/i915/i915_gem.c:4525 i915_gem_free_object+0x29d/0x2f0()
+WARN_ON(obj->frontbuffer_bits)
+Modules linked in:
+CPU: 2 PID: 25 Comm: kworker/u8:1 Tainted: G        W I     4.0.0-rc1 #1
+Hardware name: MSI MS-7850/Z87-G41 PC Mate(MS-7850), BIOS V1.1 04/26/2013
+Workqueue: events_unbound async_run_entry_fn
+00000000000011ad ffff8802162f77e8 ffffffff8187fc30 0000000000002020
+ffff8802162f7838 ffff8802162f7828 ffffffff8104f292 ffff8800d48e0000
+ffff8802158a0900 ffff880215e7c040 ffff880215e7c000 ffff880215e7c0c0
+Call Trace:
+[<ffffffff8187fc30>] dump_stack+0x45/0x57
+[<ffffffff8104f292>] warn_slowpath_common+0x92/0xd0
+[<ffffffff8104f371>] warn_slowpath_fmt+0x41/0x50
+[<ffffffff81446bdd>] i915_gem_free_object+0x29d/0x2f0
+[<ffffffff81887b21>] ? mutex_lock+0x11/0x32
+[<ffffffff813fae52>] drm_gem_object_free+0x22/0x30
+[<ffffffff8147bd4d>] intel_user_framebuffer_destroy+0x6d/0x90
+[<ffffffff81405cb6>] drm_framebuffer_free+0x56/0x70
+[<ffffffff81406a91>] drm_framebuffer_unreference+0x31/0x60
+[<ffffffff81406b8c>] drm_mode_set_config_internal+0xcc/0x110
+[<ffffffff813f4618>] restore_fbdev_mode+0xc8/0xf0
+[<ffffffff813f606b>] drm_fb_helper_restore_fbdev_mode_unlocked+0x2b/0x70
+[<ffffffff813f60cf>] drm_fb_helper_set_par+0x1f/0x40
+[<ffffffff8149b0e5>] intel_fbdev_set_par+0x15/0x60
+[<ffffffff813560a4>] fbcon_init+0x514/0x5a0
+[<ffffffff813b7c87>] visual_init+0xb7/0x120
+[<ffffffff813ba1ea>] do_bind_con_driver+0x15a/0x310
+[<ffffffff813ba4bc>] do_take_over_console+0x11c/0x1c0
+[<ffffffff8135447b>] do_fbcon_takeover+0x5b/0xb0
+[<ffffffff81359082>] fbcon_event_notify+0x7e2/0x920
+[<ffffffff8106b87d>] notifier_call_chain+0x4d/0x70
+[<ffffffff8106baa3>] __blocking_notifier_call_chain+0x53/0x80
+[<ffffffff8106bae1>] blocking_notifier_call_chain+0x11/0x20
+[<ffffffff8135c3c6>] fb_notifier_call_chain+0x16/0x20
+[<ffffffff8135e5bb>] register_framebuffer+0x1eb/0x320
+[<ffffffff813f62fc>] drm_fb_helper_initial_config+0x20c/0x3a0
+[<ffffffff8149bc26>] intel_fbdev_initial_config+0x16/0x20
+[<ffffffff8106d316>] async_run_entry_fn+0x36/0xf0
+[<ffffffff81065365>] process_one_work+0x145/0x450
+[<ffffffff81065adb>] worker_thread+0x11b/0x470
+[<ffffffff810659c0>] ? rescuer_thread+0x310/0x310
+[<ffffffff8106b004>] kthread+0xc4/0xe0
+[<ffffffff8106af40>] ? flush_kthread_worker+0x90/0x90
+[<ffffffff818895ac>] ret_from_fork+0x7c/0xb0
+[<ffffffff8106af40>] ? flush_kthread_worker+0x90/0x90
+---[ end trace dbcaea287c89cbe8 ]---

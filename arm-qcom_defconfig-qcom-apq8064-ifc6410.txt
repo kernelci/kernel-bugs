@@ -1,0 +1,66 @@
+WARNING: CPU: 0 PID: 1 at ../drivers/dma/dmaengine.c:863 dma_async_device_register+0x288/0x49c()
+this driver doesn't support generic slave capabilities reporting
+Modules linked in:
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc1 #1
+Hardware name: Qualcomm (Flattened Device Tree)
+[<c0215258>] (unwind_backtrace) from [<c0212424>] (show_stack+0x10/0x14)
+[<c0212424>] (show_stack) from [<c070c4a0>] (dump_stack+0x70/0xbc)
+[<c070c4a0>] (dump_stack) from [<c0222358>] (warn_slowpath_common+0x78/0xb4)
+[<c0222358>] (warn_slowpath_common) from [<c0222428>] (warn_slowpath_fmt+0x30/0x40)
+[<c0222428>] (warn_slowpath_fmt) from [<c04df268>] (dma_async_device_register+0x288/0x49c)
+[<c04df268>] (dma_async_device_register) from [<c04e0d08>] (bam_dma_probe+0x428/0x50c)
+[<c04e0d08>] (bam_dma_probe) from [<c0516508>] (platform_drv_probe+0x48/0xa4)
+[<c0516508>] (platform_drv_probe) from [<c0514c1c>] (driver_probe_device+0x13c/0x384)
+[<c0514c1c>] (driver_probe_device) from [<c0514ef0>] (__driver_attach+0x8c/0x90)
+[<c0514ef0>] (__driver_attach) from [<c05131a8>] (bus_for_each_dev+0x54/0x88)
+[<c05131a8>] (bus_for_each_dev) from [<c05142a0>] (bus_add_driver+0xe8/0x204)
+[<c05142a0>] (bus_add_driver) from [<c0515794>] (driver_register+0x78/0xf4)
+[<c0515794>] (driver_register) from [<c0208910>] (do_one_initcall+0xac/0x1ec)
+[<c0208910>] (do_one_initcall) from [<c096ed80>] (kernel_init_freeable+0x10c/0x1d8)
+[<c096ed80>] (kernel_init_freeable) from [<c0707918>] (kernel_init+0x8/0xec)
+[<c0707918>] (kernel_init) from [<c020f220>] (ret_from_fork+0x14/0x34)
+---[ end trace f3deb61060380edb ]---
+WARNING: CPU: 0 PID: 1 at ../drivers/dma/dmaengine.c:863 dma_async_device_register+0x288/0x49c()
+this driver doesn't support generic slave capabilities reporting
+Modules linked in:
+CPU: 0 PID: 1 Comm: swapper/0 Tainted: G        W       4.0.0-rc1 #1
+Hardware name: Qualcomm (Flattened Device Tree)
+[<c0215258>] (unwind_backtrace) from [<c0212424>] (show_stack+0x10/0x14)
+[<c0212424>] (show_stack) from [<c070c4a0>] (dump_stack+0x70/0xbc)
+[<c070c4a0>] (dump_stack) from [<c0222358>] (warn_slowpath_common+0x78/0xb4)
+[<c0222358>] (warn_slowpath_common) from [<c0222428>] (warn_slowpath_fmt+0x30/0x40)
+[<c0222428>] (warn_slowpath_fmt) from [<c04df268>] (dma_async_device_register+0x288/0x49c)
+[<c04df268>] (dma_async_device_register) from [<c04e0d08>] (bam_dma_probe+0x428/0x50c)
+[<c04e0d08>] (bam_dma_probe) from [<c0516508>] (platform_drv_probe+0x48/0xa4)
+[<c0516508>] (platform_drv_probe) from [<c0514c1c>] (driver_probe_device+0x13c/0x384)
+[<c0514c1c>] (driver_probe_device) from [<c0514ef0>] (__driver_attach+0x8c/0x90)
+[<c0514ef0>] (__driver_attach) from [<c05131a8>] (bus_for_each_dev+0x54/0x88)
+[<c05131a8>] (bus_for_each_dev) from [<c05142a0>] (bus_add_driver+0xe8/0x204)
+[<c05142a0>] (bus_add_driver) from [<c0515794>] (driver_register+0x78/0xf4)
+[<c0515794>] (driver_register) from [<c0208910>] (do_one_initcall+0xac/0x1ec)
+[<c0208910>] (do_one_initcall) from [<c096ed80>] (kernel_init_freeable+0x10c/0x1d8)
+[<c096ed80>] (kernel_init_freeable) from [<c0707918>] (kernel_init+0x8/0xec)
+[<c0707918>] (kernel_init) from [<c020f220>] (ret_from_fork+0x14/0x34)
+---[ end trace f3deb61060380edc ]---
+WARNING: CPU: 0 PID: 1 at ../drivers/dma/dmaengine.c:863 dma_async_device_register+0x288/0x49c()
+this driver doesn't support generic slave capabilities reporting
+Modules linked in:
+CPU: 0 PID: 1 Comm: swapper/0 Tainted: G        W       4.0.0-rc1 #1
+Hardware name: Qualcomm (Flattened Device Tree)
+[<c0215258>] (unwind_backtrace) from [<c0212424>] (show_stack+0x10/0x14)
+[<c0212424>] (show_stack) from [<c070c4a0>] (dump_stack+0x70/0xbc)
+[<c070c4a0>] (dump_stack) from [<c0222358>] (warn_slowpath_common+0x78/0xb4)
+[<c0222358>] (warn_slowpath_common) from [<c0222428>] (warn_slowpath_fmt+0x30/0x40)
+[<c0222428>] (warn_slowpath_fmt) from [<c04df268>] (dma_async_device_register+0x288/0x49c)
+[<c04df268>] (dma_async_device_register) from [<c04e0d08>] (bam_dma_probe+0x428/0x50c)
+[<c04e0d08>] (bam_dma_probe) from [<c0516508>] (platform_drv_probe+0x48/0xa4)
+[<c0516508>] (platform_drv_probe) from [<c0514c1c>] (driver_probe_device+0x13c/0x384)
+[<c0514c1c>] (driver_probe_device) from [<c0514ef0>] (__driver_attach+0x8c/0x90)
+[<c0514ef0>] (__driver_attach) from [<c05131a8>] (bus_for_each_dev+0x54/0x88)
+[<c05131a8>] (bus_for_each_dev) from [<c05142a0>] (bus_add_driver+0xe8/0x204)
+[<c05142a0>] (bus_add_driver) from [<c0515794>] (driver_register+0x78/0xf4)
+[<c0515794>] (driver_register) from [<c0208910>] (do_one_initcall+0xac/0x1ec)
+[<c0208910>] (do_one_initcall) from [<c096ed80>] (kernel_init_freeable+0x10c/0x1d8)
+[<c096ed80>] (kernel_init_freeable) from [<c0707918>] (kernel_init+0x8/0xec)
+[<c0707918>] (kernel_init) from [<c020f220>] (ret_from_fork+0x14/0x34)
+---[ end trace f3deb61060380edd ]---

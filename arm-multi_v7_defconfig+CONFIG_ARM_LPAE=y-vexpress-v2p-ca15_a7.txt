@@ -1,0 +1,20 @@
+WARNING: CPU: 0 PID: 1 at ../drivers/mfd/vexpress-sysreg.c:230 vexpress_sysreg_probe+0x120/0x15c()
+Modules linked in:
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc1 #1
+Hardware name: ARM-Versatile Express
+[<c0215d74>] (unwind_backtrace) from [<c0211664>] (show_stack+0x10/0x14)
+[<c0211664>] (show_stack) from [<c09363ac>] (dump_stack+0x78/0x94)
+[<c09363ac>] (dump_stack) from [<c0248278>] (warn_slowpath_common+0x74/0xb0)
+[<c0248278>] (warn_slowpath_common) from [<c02482d0>] (warn_slowpath_null+0x1c/0x24)
+[<c02482d0>] (warn_slowpath_null) from [<c0605840>] (vexpress_sysreg_probe+0x120/0x15c)
+[<c0605840>] (vexpress_sysreg_probe) from [<c05d643c>] (platform_drv_probe+0x48/0xa4)
+[<c05d643c>] (platform_drv_probe) from [<c05d4fd4>] (driver_probe_device+0x10c/0x22c)
+[<c05d4fd4>] (driver_probe_device) from [<c05d5180>] (__driver_attach+0x8c/0x90)
+[<c05d5180>] (__driver_attach) from [<c05d3804>] (bus_for_each_dev+0x54/0x88)
+[<c05d3804>] (bus_for_each_dev) from [<c05d47d4>] (bus_add_driver+0xd4/0x1d0)
+[<c05d47d4>] (bus_add_driver) from [<c05d57c8>] (driver_register+0x78/0xf4)
+[<c05d57c8>] (driver_register) from [<c0208ce4>] (do_one_initcall+0x80/0x1d0)
+[<c0208ce4>] (do_one_initcall) from [<c0c9ad8c>] (kernel_init_freeable+0x10c/0x1d8)
+[<c0c9ad8c>] (kernel_init_freeable) from [<c0931890>] (kernel_init+0x8/0xec)
+[<c0931890>] (kernel_init) from [<c020ea00>] (ret_from_fork+0x14/0x34)
+---[ end trace 8dd6564186b64641 ]---

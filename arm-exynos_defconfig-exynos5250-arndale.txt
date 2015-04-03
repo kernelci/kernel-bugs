@@ -1,0 +1,201 @@
+kernel BUG at ../drivers/iommu/exynos-iommu.c:481!
+Internal error: Oops - BUG: 0 [#1] PREEMPT SMP ARM
+Modules linked in:
+CPU: 1 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc1 #1
+Hardware name: SAMSUNG EXYNOS (Flattened Device Tree)
+task: ee070000 ti: ee05e000 task.ti: ee05e000
+PC is at __exynos_sysmmu_enable+0x174/0x180
+LR is at exynos_iommu_attach_device+0x44/0xb0
+pc : [<c0254c5c>]    lr : [<c0254cac>]    psr: 60000193
+sp : ee05fcf8  ip : 00000000  fp : 6d834000
+r10: ee347a40  r9 : a0000113  r8 : ee347bd0
+r7 : ee0ece10  r6 : ee0ece10  r5 : ee347a40  r4 : 00000000
+r3 : 6d834000  r2 : ee347a40  r1 : 6d834000  r0 : ee0ece10
+Flags: nZCv  IRQs off  FIQs on  Mode SVC_32  ISA ARM  Segment kernel
+Control: 10c5387d  Table: 4000406a  DAC: 00000015
+Process swapper/0 (pid: 1, stack limit = 0xee05e210)
+Stack: (0xee05fcf8 to 0xee060000)
+fce0:                                                       6d834000 ee347bc0
+fd00: ee347a40 00000000 ee0ece10 ee347bd0 a0000113 00000000 00000000 c0254cac
+fd20: 00000000 6d834000 ee0ece10 ee3477c0 00000034 ee3a5800 00000001 c067a420
+fd40: 00000000 c0252c24 ee261110 c00173a8 ee261110 ee0ece10 ed931810 c0282b10
+fd60: ed931a10 00000005 00000034 c0284248 ee2610c0 c028f878 ed931810 ee2068c0
+fd80: ee206340 ee347ec0 ee3a5800 c0288a14 00000000 00000000 ee3a5800 00000000
+fda0: ee347ec0 ee206890 00000000 c027eee4 ee3a5800 00000000 00000000 c0269508
+fdc0: ed931800 ee3a5800 c06bacd4 c026ae6c ee206900 c028f878 00000002 ee2068a0
+fde0: ee2068a0 00000002 ee2068c0 c0288cfc ee2068c0 00000000 c06bb230 c04b2a10
+fe00: ed931810 c0288ddc c06badf0 c06badf0 ed931810 00000001 00000000 c027f078
+fe20: ed931810 ee2d83d0 c06bac90 ffffffed ed931810 fffffdfb c06bac90 c028e040
+fe40: c028dff8 ed931810 c070d58c 00000000 c06bac90 c028cbf8 ed931810 c06bac90
+fe60: ed931844 00000000 c027f0a0 c028cda4 00000000 c06bac90 c028cd18 c028b430
+fe80: ee005274 ed859140 c06bac90 ed859280 c06bb428 c028c3f8 c05bd0e4 c06bac90
+fea0: 00000000 c06bac90 00000000 eda2bb40 c070d564 c028d3cc 00000000 00000000
+fec0: 00000000 c027f158 00000000 c05bd0e4 ffffffff 00000000 00000000 00000000
+fee0: 00000000 00000000 00000000 00000000 eda2bb40 c06a4b58 c06a4b58 eda2bb40
+ff00: c06d1840 c0008944 c047a160 00000036 ee070000 60000113 c06a8700 00000000
+ff20: 00000000 c06a8768 60000113 00000000 ef7fcaa8 c048c628 00000097 c0038c5c
+ff40: c05d1b30 c0623c28 00000006 00000006 c06a8708 ef7fca80 c069b214 00000006
+ff60: c067a414 c06d1840 00000097 c067a420 c064f598 c064fd64 00000006 00000006
+ff80: c064f598 c003d328 00000000 c046c2ec 00000000 00000000 00000000 00000000
+ffa0: 00000000 c046c2f4 00000000 c000e840 00000000 00000000 00000000 00000000
+ffc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+ffe0: 00000000 00000000 00000000 00000000 00000013 00000000 fffbffff ffffffff
+[<c0254c5c>] (__exynos_sysmmu_enable) from [<c0254cac>] (exynos_iommu_attach_device+0x44/0xb0)
+[<c0254cac>] (exynos_iommu_attach_device) from [<c0252c24>] (iommu_attach_device+0x18/0x24)
+[<c0252c24>] (iommu_attach_device) from [<c00173a8>] (arm_iommu_attach_device+0x18/0x50)
+[<c00173a8>] (arm_iommu_attach_device) from [<c0282b10>] (drm_iommu_attach_device+0x4c/0xc4)
+[<c0282b10>] (drm_iommu_attach_device) from [<c0284248>] (fimd_bind+0x94/0x1a8)
+[<c0284248>] (fimd_bind) from [<c0288a14>] (component_bind_all+0xb0/0x1cc)
+[<c0288a14>] (component_bind_all) from [<c027eee4>] (exynos_drm_load+0x98/0x140)
+[<c027eee4>] (exynos_drm_load) from [<c0269508>] (drm_dev_register+0xa0/0x100)
+[<c0269508>] (drm_dev_register) from [<c026ae6c>] (drm_platform_init+0x40/0xd0)
+[<c026ae6c>] (drm_platform_init) from [<c0288cfc>] (try_to_bring_up_master.part.3+0xc8/0x104)
+[<c0288cfc>] (try_to_bring_up_master.part.3) from [<c0288ddc>] (component_master_add_with_match+0xa4/0x124)
+[<c0288ddc>] (component_master_add_with_match) from [<c027f078>] (exynos_drm_platform_probe+0xec/0x114)
+[<c027f078>] (exynos_drm_platform_probe) from [<c028e040>] (platform_drv_probe+0x48/0xa4)
+[<c028e040>] (platform_drv_probe) from [<c028cbf8>] (driver_probe_device+0x10c/0x22c)
+[<c028cbf8>] (driver_probe_device) from [<c028cda4>] (__driver_attach+0x8c/0x90)
+[<c028cda4>] (__driver_attach) from [<c028b430>] (bus_for_each_dev+0x54/0x88)
+[<c028b430>] (bus_for_each_dev) from [<c028c3f8>] (bus_add_driver+0xd4/0x1d0)
+[<c028c3f8>] (bus_add_driver) from [<c028d3cc>] (driver_register+0x78/0xf4)
+[<c028d3cc>] (driver_register) from [<c027f158>] (exynos_drm_init+0xb8/0x114)
+[<c027f158>] (exynos_drm_init) from [<c0008944>] (do_one_initcall+0x80/0x1d0)
+[<c0008944>] (do_one_initcall) from [<c064fd64>] (kernel_init_freeable+0x10c/0x1d8)
+[<c064fd64>] (kernel_init_freeable) from [<c046c2f4>] (kernel_init+0x8/0xec)
+[<c046c2f4>] (kernel_init) from [<c000e840>] (ret_from_fork+0x14/0x34)
+Code: e3403110 11a02001 01a02003 eaffffe4 (e7f001f2) 
+---[ end trace 529d14c6c5affc5f ]---
+kernel BUG at ../drivers/iommu/exynos-iommu.c:481!
+Internal error: Oops - BUG: 0 [#1] PREEMPT SMP ARM
+Modules linked in:
+CPU: 1 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc1 #1
+Hardware name: SAMSUNG EXYNOS (Flattened Device Tree)
+task: ee070000 ti: ee05e000 task.ti: ee05e000
+PC is at __exynos_sysmmu_enable+0x174/0x180
+LR is at exynos_iommu_attach_device+0x44/0xb0
+pc : [<c0254c5c>]    lr : [<c0254cac>]    psr: 60000193
+sp : ee05fcf8  ip : 00000000  fp : 6d90c000
+r10: eda40d40  r9 : a0000113  r8 : eda40d10
+r7 : ee0ece10  r6 : ee0ece10  r5 : eda40d40  r4 : 00000000
+r3 : 6d90c000  r2 : eda40d40  r1 : 6d90c000  r0 : ee0ece10
+Flags: nZCv  IRQs off  FIQs on  Mode SVC_32  ISA ARM  Segment kernel
+Control: 10c5387d  Table: 4000406a  DAC: 00000015
+Process swapper/0 (pid: 1, stack limit = 0xee05e210)
+Stack: (0xee05fcf8 to 0xee060000)
+fce0:                                                       6d90c000 eda40d00
+fd00: eda40d40 00000000 ee0ece10 eda40d10 a0000113 00000000 00000000 c0254cac
+fd20: 00000000 6d90c000 ee0ece10 eda40dc0 00000034 ee39d800 00000001 c067a420
+fd40: 00000000 c0252c24 ee1fd790 c00173a8 ee1fd790 ee0ece10 ee2af810 c0282b10
+fd60: ee2afa10 00000005 00000034 c0284248 ee1fd7c0 c028f878 ee2af810 ee221880
+fd80: ee2c7c80 eda40e40 ee39d800 c0288a14 00000000 00000000 ee39d800 00000000
+fda0: eda40e40 ee221550 00000000 c027eee4 ee39d800 00000000 00000000 c0269508
+fdc0: ee2af800 ee39d800 c06bacd4 c026ae6c ee22df00 c028f878 00000002 ee221560
+fde0: ee221560 00000002 ee221880 c0288cfc ee221880 00000000 c06bb230 c04b2a10
+fe00: ee2af810 c0288ddc c06badf0 c06badf0 ee2af810 00000001 00000000 c027f078
+fe20: ee2af810 ee1553d0 c06bac90 ffffffed ee2af810 fffffdfb c06bac90 c028e040
+fe40: c028dff8 ee2af810 c070d58c 00000000 c06bac90 c028cbf8 ee2af810 c06bac90
+fe60: ee2af844 00000000 c027f0a0 c028cda4 00000000 c06bac90 c028cd18 c028b430
+fe80: ee005274 eda417c0 c06bac90 eda41d80 c06bb428 c028c3f8 c05bd0e4 c06bac90
+fea0: 00000000 c06bac90 00000000 ee15acc0 c070d564 c028d3cc 00000000 00000000
+fec0: 00000000 c027f158 00000000 c05bd0e4 ffffffff 00000000 00000000 00000000
+fee0: 00000000 00000000 00000000 00000000 ee15acc0 c06a4b58 c06a4b58 ee15acc0
+ff00: c06d1840 c0008944 c047a160 00000036 ee070000 60000113 c06a8700 00000000
+ff20: 00000000 c06a8768 60000113 00000000 ef7fcaa8 c048c628 00000097 c0038c5c
+ff40: c05d1b30 c0623c28 00000006 00000006 c06a8708 ef7fca80 c069b214 00000006
+ff60: c067a414 c06d1840 00000097 c067a420 c064f598 c064fd64 00000006 00000006
+ff80: c064f598 c003d328 00000000 c046c2ec 00000000 00000000 00000000 00000000
+ffa0: 00000000 c046c2f4 00000000 c000e840 00000000 00000000 00000000 00000000
+ffc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+ffe0: 00000000 00000000 00000000 00000000 00000013 00000000 ffffffff ffffffff
+[<c0254c5c>] (__exynos_sysmmu_enable) from [<c0254cac>] (exynos_iommu_attach_device+0x44/0xb0)
+[<c0254cac>] (exynos_iommu_attach_device) from [<c0252c24>] (iommu_attach_device+0x18/0x24)
+[<c0252c24>] (iommu_attach_device) from [<c00173a8>] (arm_iommu_attach_device+0x18/0x50)
+[<c00173a8>] (arm_iommu_attach_device) from [<c0282b10>] (drm_iommu_attach_device+0x4c/0xc4)
+[<c0282b10>] (drm_iommu_attach_device) from [<c0284248>] (fimd_bind+0x94/0x1a8)
+[<c0284248>] (fimd_bind) from [<c0288a14>] (component_bind_all+0xb0/0x1cc)
+[<c0288a14>] (component_bind_all) from [<c027eee4>] (exynos_drm_load+0x98/0x140)
+[<c027eee4>] (exynos_drm_load) from [<c0269508>] (drm_dev_register+0xa0/0x100)
+[<c0269508>] (drm_dev_register) from [<c026ae6c>] (drm_platform_init+0x40/0xd0)
+[<c026ae6c>] (drm_platform_init) from [<c0288cfc>] (try_to_bring_up_master.part.3+0xc8/0x104)
+[<c0288cfc>] (try_to_bring_up_master.part.3) from [<c0288ddc>] (component_master_add_with_match+0xa4/0x124)
+[<c0288ddc>] (component_master_add_with_match) from [<c027f078>] (exynos_drm_platform_probe+0xec/0x114)
+[<c027f078>] (exynos_drm_platform_probe) from [<c028e040>] (platform_drv_probe+0x48/0xa4)
+[<c028e040>] (platform_drv_probe) from [<c028cbf8>] (driver_probe_device+0x10c/0x22c)
+[<c028cbf8>] (driver_probe_device) from [<c028cda4>] (__driver_attach+0x8c/0x90)
+[<c028cda4>] (__driver_attach) from [<c028b430>] (bus_for_each_dev+0x54/0x88)
+[<c028b430>] (bus_for_each_dev) from [<c028c3f8>] (bus_add_driver+0xd4/0x1d0)
+[<c028c3f8>] (bus_add_driver) from [<c028d3cc>] (driver_register+0x78/0xf4)
+[<c028d3cc>] (driver_register) from [<c027f158>] (exynos_drm_init+0xb8/0x114)
+[<c027f158>] (exynos_drm_init) from [<c0008944>] (do_one_initcall+0x80/0x1d0)
+[<c0008944>] (do_one_initcall) from [<c064fd64>] (kernel_init_freeable+0x10c/0x1d8)
+[<c064fd64>] (kernel_init_freeable) from [<c046c2f4>] (kernel_init+0x8/0xec)
+[<c046c2f4>] (kernel_init) from [<c000e840>] (ret_from_fork+0x14/0x34)
+Code: e3403110 11a02001 01a02003 eaffffe4 (e7f001f2) 
+---[ end trace 0ef5ee5564897684 ]---
+kernel BUG at ../drivers/iommu/exynos-iommu.c:481!
+Internal error: Oops - BUG: 0 [#1] PREEMPT SMP ARM
+Modules linked in:
+CPU: 1 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc1 #1
+Hardware name: SAMSUNG EXYNOS (Flattened Device Tree)
+task: ee070000 ti: ee05e000 task.ti: ee05e000
+PC is at __exynos_sysmmu_enable+0x174/0x180
+LR is at exynos_iommu_attach_device+0x44/0xb0
+pc : [<c0254c5c>]    lr : [<c0254cac>]    psr: 60000193
+sp : ee05fcf8  ip : 00000000  fp : 6e2d4000
+r10: ee362c00  r9 : a0000113  r8 : ee362b50
+r7 : ee0ece10  r6 : ee0ece10  r5 : ee362c00  r4 : 00000000
+r3 : 6e2d4000  r2 : ee362c00  r1 : 6e2d4000  r0 : ee0ece10
+Flags: nZCv  IRQs off  FIQs on  Mode SVC_32  ISA ARM  Segment kernel
+Control: 10c5387d  Table: 4000406a  DAC: 00000015
+Process swapper/0 (pid: 1, stack limit = 0xee05e210)
+Stack: (0xee05fcf8 to 0xee060000)
+fce0:                                                       6e2d4000 ee362b40
+fd00: ee362c00 00000000 ee0ece10 ee362b50 a0000113 00000000 00000000 c0254cac
+fd20: 00000000 6e2d4000 ee0ece10 ee362d00 00000034 ee3a5800 00000001 c067a420
+fd40: 00000000 c0252c24 ed9bc3d0 c00173a8 ed9bc3d0 ee0ece10 ee2f9810 c0282b10
+fd60: ee2f9a10 00000005 00000034 c0284248 ed9bc380 c028f878 ee2f9810 ee3629c0
+fd80: ee133f40 ee362900 ee3a5800 c0288a14 00000000 00000000 ee3a5800 00000000
+fda0: ee362900 ee362c50 00000000 c027eee4 ee3a5800 00000000 00000000 c0269508
+fdc0: ee2f9800 ee3a5800 c06bacd4 c026ae6c ee362080 c028f878 00000002 ee362c60
+fde0: ee362c60 00000002 ee3629c0 c0288cfc ee3629c0 00000000 c06bb230 c04b2a10
+fe00: ee2f9810 c0288ddc c06badf0 c06badf0 ee2f9810 00000001 00000000 c027f078
+fe20: ee2f9810 ee2b8310 c06bac90 ffffffed ee2f9810 fffffdfb c06bac90 c028e040
+fe40: c028dff8 ee2f9810 c070d58c 00000000 c06bac90 c028cbf8 ee2f9810 c06bac90
+fe60: ee2f9844 00000000 c027f0a0 c028cda4 00000000 c06bac90 c028cd18 c028b430
+fe80: ee005274 ee36e2c0 c06bac90 ee36ea00 c06bb428 c028c3f8 c05bd0e4 c06bac90
+fea0: 00000000 c06bac90 00000000 eda49e40 c070d564 c028d3cc 00000000 00000000
+fec0: 00000000 c027f158 00000000 c05bd0e4 ffffffff 00000000 00000000 00000000
+fee0: 00000000 00000000 00000000 00000000 eda49e40 c06a4b58 c06a4b58 eda49e40
+ff00: c06d1840 c0008944 c047a160 00000036 ee070000 60000113 c06a8700 00000000
+ff20: 00000000 c06a8768 60000113 00000000 ef7fcaa8 c048c628 00000097 c0038c5c
+ff40: c05d1b30 c0623c28 00000006 00000006 c06a8708 ef7fca80 c069b214 00000006
+ff60: c067a414 c06d1840 00000097 c067a420 c064f598 c064fd64 00000006 00000006
+ff80: c064f598 c003d328 00000000 c046c2ec 00000000 00000000 00000000 00000000
+ffa0: 00000000 c046c2f4 00000000 c000e840 00000000 00000000 00000000 00000000
+ffc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+ffe0: 00000000 00000000 00000000 00000000 00000013 00000000 ffffffff ffffffff
+[<c0254c5c>] (__exynos_sysmmu_enable) from [<c0254cac>] (exynos_iommu_attach_device+0x44/0xb0)
+[<c0254cac>] (exynos_iommu_attach_device) from [<c0252c24>] (iommu_attach_device+0x18/0x24)
+[<c0252c24>] (iommu_attach_device) from [<c00173a8>] (arm_iommu_attach_device+0x18/0x50)
+[<c00173a8>] (arm_iommu_attach_device) from [<c0282b10>] (drm_iommu_attach_device+0x4c/0xc4)
+[<c0282b10>] (drm_iommu_attach_device) from [<c0284248>] (fimd_bind+0x94/0x1a8)
+[<c0284248>] (fimd_bind) from [<c0288a14>] (component_bind_all+0xb0/0x1cc)
+[<c0288a14>] (component_bind_all) from [<c027eee4>] (exynos_drm_load+0x98/0x140)
+[<c027eee4>] (exynos_drm_load) from [<c0269508>] (drm_dev_register+0xa0/0x100)
+[<c0269508>] (drm_dev_register) from [<c026ae6c>] (drm_platform_init+0x40/0xd0)
+[<c026ae6c>] (drm_platform_init) from [<c0288cfc>] (try_to_bring_up_master.part.3+0xc8/0x104)
+[<c0288cfc>] (try_to_bring_up_master.part.3) from [<c0288ddc>] (component_master_add_with_match+0xa4/0x124)
+[<c0288ddc>] (component_master_add_with_match) from [<c027f078>] (exynos_drm_platform_probe+0xec/0x114)
+[<c027f078>] (exynos_drm_platform_probe) from [<c028e040>] (platform_drv_probe+0x48/0xa4)
+[<c028e040>] (platform_drv_probe) from [<c028cbf8>] (driver_probe_device+0x10c/0x22c)
+[<c028cbf8>] (driver_probe_device) from [<c028cda4>] (__driver_attach+0x8c/0x90)
+[<c028cda4>] (__driver_attach) from [<c028b430>] (bus_for_each_dev+0x54/0x88)
+[<c028b430>] (bus_for_each_dev) from [<c028c3f8>] (bus_add_driver+0xd4/0x1d0)
+[<c028c3f8>] (bus_add_driver) from [<c028d3cc>] (driver_register+0x78/0xf4)
+[<c028d3cc>] (driver_register) from [<c027f158>] (exynos_drm_init+0xb8/0x114)
+[<c027f158>] (exynos_drm_init) from [<c0008944>] (do_one_initcall+0x80/0x1d0)
+[<c0008944>] (do_one_initcall) from [<c064fd64>] (kernel_init_freeable+0x10c/0x1d8)
+[<c064fd64>] (kernel_init_freeable) from [<c046c2f4>] (kernel_init+0x8/0xec)
+[<c046c2f4>] (kernel_init) from [<c000e840>] (ret_from_fork+0x14/0x34)
+Code: e3403110 11a02001 01a02003 eaffffe4 (e7f001f2) 
+---[ end trace d84432fc604279d4 ]---

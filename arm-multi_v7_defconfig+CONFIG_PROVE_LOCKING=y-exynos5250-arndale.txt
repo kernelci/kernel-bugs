@@ -1,0 +1,19 @@
+WARNING: CPU: 1 PID: 0 at ../kernel/locking/lockdep.c:2744 lockdep_trace_alloc+0xec/0x118()
+DEBUG_LOCKS_WARN_ON(irqs_disabled_flags(flags))
+Modules linked in:
+CPU: 1 PID: 0 Comm: swapper/1 Not tainted 4.0.0-rc1 #1
+Hardware name: SAMSUNG EXYNOS (Flattened Device Tree)
+[<c0215f5c>] (unwind_backtrace) from [<c02119bc>] (show_stack+0x10/0x14)
+[<c02119bc>] (show_stack) from [<c0951104>] (dump_stack+0x78/0x94)
+[<c0951104>] (dump_stack) from [<c0247810>] (warn_slowpath_common+0x74/0xb0)
+[<c0247810>] (warn_slowpath_common) from [<c02478e0>] (warn_slowpath_fmt+0x30/0x40)
+[<c02478e0>] (warn_slowpath_fmt) from [<c02811f4>] (lockdep_trace_alloc+0xec/0x118)
+[<c02811f4>] (lockdep_trace_alloc) from [<c0302b74>] (kmem_cache_alloc+0x20/0x118)
+[<c0302b74>] (kmem_cache_alloc) from [<c028b640>] (request_threaded_irq+0x64/0x128)
+[<c028b640>] (request_threaded_irq) from [<c07f3d04>] (exynos4_local_timer_setup+0xc8/0x144)
+[<c07f3d04>] (exynos4_local_timer_setup) from [<c07f3e18>] (exynos4_mct_cpu_notify+0x28/0x8c)
+[<c07f3e18>] (exynos4_mct_cpu_notify) from [<c0261050>] (notifier_call_chain+0x44/0x84)
+[<c0261050>] (notifier_call_chain) from [<c0247944>] (__cpu_notify+0x28/0x44)
+[<c0247944>] (__cpu_notify) from [<c02143e4>] (secondary_start_kernel+0xe4/0x134)
+[<c02143e4>] (secondary_start_kernel) from [<40208b24>] (0x40208b24)
+---[ end trace f63e8b5714297c05 ]-
