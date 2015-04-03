@@ -1,20 +1,20 @@
 WARNING: CPU: 0 PID: 1 at ../drivers/mfd/vexpress-sysreg.c:230 vexpress_sysreg_probe+0x10c/0x148()
 Modules linked in:
-CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc2 #1
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc3 #1
 Hardware name: ARM-Versatile Express
 [<c0216cdc>] (unwind_backtrace) from [<c021273c>] (show_stack+0x10/0x14)
-[<c021273c>] (show_stack) from [<c0987ac4>] (dump_stack+0x78/0x94)
-[<c0987ac4>] (dump_stack) from [<c024c510>] (warn_slowpath_common+0x74/0xb0)
+[<c021273c>] (show_stack) from [<c09886f0>] (dump_stack+0x78/0x94)
+[<c09886f0>] (dump_stack) from [<c024c510>] (warn_slowpath_common+0x74/0xb0)
 [<c024c510>] (warn_slowpath_common) from [<c024c568>] (warn_slowpath_null+0x1c/0x24)
-[<c024c568>] (warn_slowpath_null) from [<c062f1a0>] (vexpress_sysreg_probe+0x10c/0x148)
-[<c062f1a0>] (vexpress_sysreg_probe) from [<c05ffe48>] (platform_drv_probe+0x48/0xa4)
-[<c05ffe48>] (platform_drv_probe) from [<c05fe9cc>] (driver_probe_device+0x10c/0x230)
-[<c05fe9cc>] (driver_probe_device) from [<c05feb84>] (__driver_attach+0x94/0x98)
-[<c05feb84>] (__driver_attach) from [<c05fd1c0>] (bus_for_each_dev+0x54/0x88)
-[<c05fd1c0>] (bus_for_each_dev) from [<c05fe1b4>] (bus_add_driver+0xd4/0x1d0)
-[<c05fe1b4>] (bus_add_driver) from [<c05ff1c0>] (driver_register+0x78/0xf4)
-[<c05ff1c0>] (driver_register) from [<c0209aa4>] (do_one_initcall+0x80/0x1d4)
+[<c024c568>] (warn_slowpath_null) from [<c062fa08>] (vexpress_sysreg_probe+0x10c/0x148)
+[<c062fa08>] (vexpress_sysreg_probe) from [<c06006b0>] (platform_drv_probe+0x48/0xa4)
+[<c06006b0>] (platform_drv_probe) from [<c05ff234>] (driver_probe_device+0x10c/0x230)
+[<c05ff234>] (driver_probe_device) from [<c05ff3ec>] (__driver_attach+0x94/0x98)
+[<c05ff3ec>] (__driver_attach) from [<c05fda28>] (bus_for_each_dev+0x54/0x88)
+[<c05fda28>] (bus_for_each_dev) from [<c05fea1c>] (bus_add_driver+0xd4/0x1d0)
+[<c05fea1c>] (bus_add_driver) from [<c05ffa28>] (driver_register+0x78/0xf4)
+[<c05ffa28>] (driver_register) from [<c0209aa4>] (do_one_initcall+0x80/0x1d4)
 [<c0209aa4>] (do_one_initcall) from [<c0d92d84>] (kernel_init_freeable+0x10c/0x1d8)
-[<c0d92d84>] (kernel_init_freeable) from [<c0982018>] (kernel_init+0x8/0xec)
-[<c0982018>] (kernel_init) from [<c020f830>] (ret_from_fork+0x14/0x24)
----[ end trace ae73e04537733b5a ]---
+[<c0d92d84>] (kernel_init_freeable) from [<c0982c44>] (kernel_init+0x8/0xec)
+[<c0982c44>] (kernel_init) from [<c020f830>] (ret_from_fork+0x14/0x24)
+---[ end trace 1aefa315cc5bad37 ]---

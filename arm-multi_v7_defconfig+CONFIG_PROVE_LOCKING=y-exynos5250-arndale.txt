@@ -1,19 +1,19 @@
 WARNING: CPU: 1 PID: 0 at ../kernel/locking/lockdep.c:2744 lockdep_trace_alloc+0xec/0x118()
 DEBUG_LOCKS_WARN_ON(irqs_disabled_flags(flags))
 Modules linked in:
-CPU: 1 PID: 0 Comm: swapper/1 Not tainted 4.0.0-rc2 #1
+CPU: 1 PID: 0 Comm: swapper/1 Not tainted 4.0.0-rc3 #1
 Hardware name: SAMSUNG EXYNOS (Flattened Device Tree)
 [<c0216cdc>] (unwind_backtrace) from [<c021273c>] (show_stack+0x10/0x14)
-[<c021273c>] (show_stack) from [<c0987ac4>] (dump_stack+0x78/0x94)
-[<c0987ac4>] (dump_stack) from [<c024c510>] (warn_slowpath_common+0x74/0xb0)
+[<c021273c>] (show_stack) from [<c09886f0>] (dump_stack+0x78/0x94)
+[<c09886f0>] (dump_stack) from [<c024c510>] (warn_slowpath_common+0x74/0xb0)
 [<c024c510>] (warn_slowpath_common) from [<c024c5e0>] (warn_slowpath_fmt+0x30/0x40)
-[<c024c5e0>] (warn_slowpath_fmt) from [<c0285ef4>] (lockdep_trace_alloc+0xec/0x118)
-[<c0285ef4>] (lockdep_trace_alloc) from [<c030788c>] (kmem_cache_alloc+0x20/0x118)
-[<c030788c>] (kmem_cache_alloc) from [<c0290340>] (request_threaded_irq+0x64/0x128)
-[<c0290340>] (request_threaded_irq) from [<c0829fc0>] (exynos4_local_timer_setup+0xc8/0x144)
-[<c0829fc0>] (exynos4_local_timer_setup) from [<c082a0d4>] (exynos4_mct_cpu_notify+0x28/0x8c)
-[<c082a0d4>] (exynos4_mct_cpu_notify) from [<c0265d50>] (notifier_call_chain+0x44/0x84)
+[<c024c5e0>] (warn_slowpath_fmt) from [<c0285f48>] (lockdep_trace_alloc+0xec/0x118)
+[<c0285f48>] (lockdep_trace_alloc) from [<c030794c>] (kmem_cache_alloc+0x20/0x118)
+[<c030794c>] (kmem_cache_alloc) from [<c02903b8>] (request_threaded_irq+0x84/0x14c)
+[<c02903b8>] (request_threaded_irq) from [<c082ab14>] (exynos4_local_timer_setup+0xc8/0x144)
+[<c082ab14>] (exynos4_local_timer_setup) from [<c082ac28>] (exynos4_mct_cpu_notify+0x28/0x8c)
+[<c082ac28>] (exynos4_mct_cpu_notify) from [<c0265d50>] (notifier_call_chain+0x44/0x84)
 [<c0265d50>] (notifier_call_chain) from [<c024c644>] (__cpu_notify+0x28/0x44)
 [<c024c644>] (__cpu_notify) from [<c0215164>] (secondary_start_kernel+0xe4/0x134)
 [<c0215164>] (secondary_start_kernel) from [<402098a4>] (0x402098a4)
----[ end trace 2dd7f000a840e5fe ]--
+---[ end trace 07d3b4ae95443cee ]--
