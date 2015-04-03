@@ -1,20 +1,20 @@
 WARNING: CPU: 0 PID: 1 at ../drivers/mfd/vexpress-sysreg.c:230 vexpress_sysreg_probe+0x120/0x15c()
 Modules linked in:
-CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc4 #1
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc5 #1
 Hardware name: ARM-Versatile Express
-[<c0216ab4>] (unwind_backtrace) from [<c02123a4>] (show_stack+0x10/0x14)
-[<c02123a4>] (show_stack) from [<c096e9c8>] (dump_stack+0x78/0x94)
-[<c096e9c8>] (dump_stack) from [<c024d5f8>] (warn_slowpath_common+0x74/0xb0)
+[<c0216af4>] (unwind_backtrace) from [<c02123e4>] (show_stack+0x10/0x14)
+[<c02123e4>] (show_stack) from [<c096e814>] (dump_stack+0x78/0x94)
+[<c096e814>] (dump_stack) from [<c024d5f8>] (warn_slowpath_common+0x74/0xb0)
 [<c024d5f8>] (warn_slowpath_common) from [<c024d650>] (warn_slowpath_null+0x1c/0x24)
-[<c024d650>] (warn_slowpath_null) from [<c0620504>] (vexpress_sysreg_probe+0x120/0x15c)
-[<c0620504>] (vexpress_sysreg_probe) from [<c05f1100>] (platform_drv_probe+0x48/0xa4)
-[<c05f1100>] (platform_drv_probe) from [<c05efc98>] (driver_probe_device+0x10c/0x22c)
-[<c05efc98>] (driver_probe_device) from [<c05efe44>] (__driver_attach+0x8c/0x90)
-[<c05efe44>] (__driver_attach) from [<c05ee4c8>] (bus_for_each_dev+0x54/0x88)
-[<c05ee4c8>] (bus_for_each_dev) from [<c05ef498>] (bus_add_driver+0xd4/0x1d0)
-[<c05ef498>] (bus_add_driver) from [<c05f048c>] (driver_register+0x78/0xf4)
-[<c05f048c>] (driver_register) from [<c0209a24>] (do_one_initcall+0x80/0x1d0)
-[<c0209a24>] (do_one_initcall) from [<c0d11d8c>] (kernel_init_freeable+0x10c/0x1d8)
-[<c0d11d8c>] (kernel_init_freeable) from [<c0969d14>] (kernel_init+0x8/0xec)
-[<c0969d14>] (kernel_init) from [<c020f740>] (ret_from_fork+0x14/0x34)
----[ end trace 5de77f9d0db48f2a ]---
+[<c024d650>] (warn_slowpath_null) from [<c062057c>] (vexpress_sysreg_probe+0x120/0x15c)
+[<c062057c>] (vexpress_sysreg_probe) from [<c05f1150>] (platform_drv_probe+0x48/0xa4)
+[<c05f1150>] (platform_drv_probe) from [<c05efce8>] (driver_probe_device+0x10c/0x22c)
+[<c05efce8>] (driver_probe_device) from [<c05efe94>] (__driver_attach+0x8c/0x90)
+[<c05efe94>] (__driver_attach) from [<c05ee518>] (bus_for_each_dev+0x54/0x88)
+[<c05ee518>] (bus_for_each_dev) from [<c05ef4e8>] (bus_add_driver+0xd4/0x1d0)
+[<c05ef4e8>] (bus_add_driver) from [<c05f04dc>] (driver_register+0x78/0xf4)
+[<c05f04dc>] (driver_register) from [<c0209a44>] (do_one_initcall+0x80/0x1d0)
+[<c0209a44>] (do_one_initcall) from [<c0d11d8c>] (kernel_init_freeable+0x10c/0x1d8)
+[<c0d11d8c>] (kernel_init_freeable) from [<c0969b60>] (kernel_init+0x8/0xec)
+[<c0969b60>] (kernel_init) from [<c020f780>] (ret_from_fork+0x14/0x34)
+---[ end trace 64bf77a1ab387ada ]---

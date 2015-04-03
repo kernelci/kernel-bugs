@@ -2,95 +2,49 @@ WARNING: CPU: 0 PID: 0 at ../drivers/iommu/dmar.c:829 warn_invalid_dmar+0x8a/0xa
 Your BIOS is broken; DMAR reported at address 0!
 BIOS vendor: American Megatrends Inc.; Ver: V1.1; Product Version: 1.0
 Modules linked in:
-CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc4 #1
+CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc5 #1
 Hardware name: MSI MS-7850/Z87-G41 PC Mate(MS-7850), BIOS V1.1 04/26/2013
-000000000000033d ffffffff81e03d48 ffffffff81880419 000000000000000e
+000000000000033d ffffffff81e03d48 ffffffff81881e49 000000000000000e
 ffffffff81e03d98 ffffffff81e03d88 ffffffff8104f2b2 0000000000001000
 ffffffff820d201c ffffffff820d203c ffffffffff200810 ffffffff81e03eb0
 Call Trace:
-[<ffffffff81880419>] dump_stack+0x45/0x57
+[<ffffffff81881e49>] dump_stack+0x45/0x57
 [<ffffffff8104f2b2>] warn_slowpath_common+0x92/0xd0
 [<ffffffff8104f34a>] warn_slowpath_fmt_taint+0x3a/0x40
-[<ffffffff8187ae2b>] ? acpi_os_map_iomem+0x23/0x14d
-[<ffffffff813e1aaa>] warn_invalid_dmar+0x8a/0xa0
-[<ffffffff8138bc68>] ? acpi_tb_acquire_table+0x39/0x66
-[<ffffffff8187b14c>] dmar_validate_one_drhd+0xdc/0x100
-[<ffffffff813e173a>] dmar_walk_remapping_entries+0x2a/0x140
-[<ffffffff81f2f719>] detect_intel_iommu+0x52/0xd1
-[<ffffffff8187b070>] ? acpi_os_unmap_memory+0xf/0xf
-[<ffffffff81ef53ec>] pci_iommu_alloc+0x44/0x6e
-[<ffffffff81f02b50>] mem_init+0x11/0x88
+[<ffffffff8187c85b>] ? acpi_os_map_iomem+0x23/0x14d
+[<ffffffff813e1ada>] warn_invalid_dmar+0x8a/0xa0
+[<ffffffff8138bca0>] ? acpi_tb_acquire_table+0x39/0x66
+[<ffffffff8187cb7c>] dmar_validate_one_drhd+0xdc/0x100
+[<ffffffff813e176a>] dmar_walk_remapping_entries+0x2a/0x140
+[<ffffffff81f2f728>] detect_intel_iommu+0x52/0xd1
+[<ffffffff8187caa0>] ? acpi_os_unmap_memory+0xf/0xf
+[<ffffffff81ef53dc>] pci_iommu_alloc+0x44/0x6e
+[<ffffffff81f02b5f>] mem_init+0x11/0x88
 [<ffffffff81eefdb8>] start_kernel+0x207/0x423
 [<ffffffff81eef9b1>] ? set_init_arg+0x55/0x55
 [<ffffffff81eef5b2>] x86_64_start_reservations+0x2a/0x2c
 [<ffffffff81eef6b4>] x86_64_start_kernel+0x100/0x107
----[ end trace dae7568e48167c5f ]---
+---[ end trace c0a83a0fa2678c69 ]---
 WARNING: CPU: 3 PID: 1 at ../arch/x86/mm/init.c:658 free_init_pages+0xb3/0xc0()
 Modules linked in:
-CPU: 3 PID: 1 Comm: swapper/0 Tainted: G          I     4.0.0-rc4 #1
+CPU: 3 PID: 1 Comm: swapper/0 Tainted: G          I     4.0.0-rc5 #1
 Hardware name: MSI MS-7850/Z87-G41 PC Mate(MS-7850), BIOS V1.1 04/26/2013
-0000000000000292 ffff880216157db8 ffffffff81880419 00000000000000f8
-0000000000000000 ffff880216157df8 ffffffff8104f2b2 ffff880216157dd8
-ffff88007fe38fff ffff880080000000 ffffffff81bc073a ffff88007fe39000
+0000000000000292 ffff880216157db8 ffffffff81881e49 00000000000000f8
+0000000000000000 ffff880216157df8 ffffffff8104f2b2 ffff88021623b410
+ffff88007fe38fff ffff880080000000 ffffffff81bc0957 ffff88007fe39000
 Call Trace:
-[<ffffffff81880419>] dump_stack+0x45/0x57
+[<ffffffff81881e49>] dump_stack+0x45/0x57
 [<ffffffff8104f2b2>] warn_slowpath_common+0x92/0xd0
 [<ffffffff8104f305>] warn_slowpath_null+0x15/0x20
 [<ffffffff81041bf3>] free_init_pages+0xb3/0xc0
-[<ffffffff81f02781>] free_initrd_mem+0x30/0x35
+[<ffffffff81f02790>] free_initrd_mem+0x30/0x35
 [<ffffffff81ef1daf>] populate_rootfs+0xf6/0x118
 [<ffffffff81ef1cb9>] ? do_header+0x13d/0x13d
 [<ffffffff810002d9>] do_one_initcall+0x89/0x1b0
 [<ffffffff81ef0115>] kernel_init_freeable+0x141/0x1da
 [<ffffffff81eef902>] ? do_early_param+0x86/0x86
-[<ffffffff81879800>] ? rest_init+0x80/0x80
-[<ffffffff81879809>] kernel_init+0x9/0xf0
-[<ffffffff81889e08>] ret_from_fork+0x58/0x90
-[<ffffffff81879800>] ? rest_init+0x80/0x80
----[ end trace dae7568e48167c60 ]---
-WARNING: CPU: 2 PID: 6 at ../drivers/gpu/drm/i915/i915_gem.c:4525 i915_gem_free_object+0x29d/0x2f0()
-WARN_ON(obj->frontbuffer_bits)
-Modules linked in:
-CPU: 2 PID: 6 Comm: kworker/u8:0 Tainted: G        W I     4.0.0-rc4 #1
-Hardware name: MSI MS-7850/Z87-G41 PC Mate(MS-7850), BIOS V1.1 04/26/2013
-Workqueue: events_unbound async_run_entry_fn
-00000000000011ad ffff8802161ab7e8 ffffffff81880419 0000000000003131
-ffff8802161ab838 ffff8802161ab828 ffffffff8104f2b2 ffff880215b40000
-ffff880215b6bd00 ffff880215b82040 ffff880215b82000 ffff880215b820c0
-Call Trace:
-[<ffffffff81880419>] dump_stack+0x45/0x57
-[<ffffffff8104f2b2>] warn_slowpath_common+0x92/0xd0
-[<ffffffff8104f391>] warn_slowpath_fmt+0x41/0x50
-[<ffffffff81446cfd>] i915_gem_free_object+0x29d/0x2f0
-[<ffffffff818883b1>] ? mutex_lock+0x11/0x32
-[<ffffffff813faf02>] drm_gem_object_free+0x22/0x30
-[<ffffffff8147bded>] intel_user_framebuffer_destroy+0x6d/0x90
-[<ffffffff81405c86>] drm_framebuffer_free+0x56/0x70
-[<ffffffff81406a01>] drm_framebuffer_unreference+0x31/0x60
-[<ffffffff81406afc>] drm_mode_set_config_internal+0xcc/0x110
-[<ffffffff813f46c8>] restore_fbdev_mode+0xc8/0xf0
-[<ffffffff813f611b>] drm_fb_helper_restore_fbdev_mode_unlocked+0x2b/0x70
-[<ffffffff813f617f>] drm_fb_helper_set_par+0x1f/0x40
-[<ffffffff8149b195>] intel_fbdev_set_par+0x15/0x60
-[<ffffffff81356224>] fbcon_init+0x514/0x5a0
-[<ffffffff813b7df7>] visual_init+0xb7/0x120
-[<ffffffff813ba35a>] do_bind_con_driver+0x15a/0x310
-[<ffffffff813ba62c>] do_take_over_console+0x11c/0x1c0
-[<ffffffff813545fb>] do_fbcon_takeover+0x5b/0xb0
-[<ffffffff81359202>] fbcon_event_notify+0x7e2/0x920
-[<ffffffff8106b98d>] notifier_call_chain+0x4d/0x70
-[<ffffffff8106bbb3>] __blocking_notifier_call_chain+0x53/0x80
-[<ffffffff8106bbf1>] blocking_notifier_call_chain+0x11/0x20
-[<ffffffff8135c546>] fb_notifier_call_chain+0x16/0x20
-[<ffffffff8135e73b>] register_framebuffer+0x1eb/0x320
-[<ffffffff813f63ac>] drm_fb_helper_initial_config+0x20c/0x3a0
-[<ffffffff8149bcd6>] intel_fbdev_initial_config+0x16/0x20
-[<ffffffff8106d426>] async_run_entry_fn+0x36/0xf0
-[<ffffffff810653b5>] process_one_work+0x145/0x450
-[<ffffffff81065b2b>] worker_thread+0x11b/0x470
-[<ffffffff81065a10>] ? rescuer_thread+0x310/0x310
-[<ffffffff8106b114>] kthread+0xc4/0xe0
-[<ffffffff8106b050>] ? flush_kthread_worker+0x90/0x90
-[<ffffffff81889e08>] ret_from_fork+0x58/0x90
-[<ffffffff8106b050>] ? flush_kthread_worker+0x90/0x90
----[ end trace dae7568e48167c61 ]---
+[<ffffffff8187b230>] ? rest_init+0x80/0x80
+[<ffffffff8187b239>] kernel_init+0x9/0xf0
+[<ffffffff8188b888>] ret_from_fork+0x58/0x90
+[<ffffffff8187b230>] ? rest_init+0x80/0x80
+---[ end trace c0a83a0fa2678c6a ]---
