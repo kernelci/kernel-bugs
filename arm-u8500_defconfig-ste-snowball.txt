@@ -1,7 +1,7 @@
 WARNING: CPU: 0 PID: 1 at ../drivers/dma/dmaengine.c:863 dma_async_device_register+0x280/0x494()
 this driver doesn't support generic slave capabilities reporting
 Modules linked in:
-CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc1 #1
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc2 #1
 Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
 [<c00142e4>] (unwind_backtrace) from [<c0010f44>] (show_stack+0x10/0x14)
 [<c0010f44>] (show_stack) from [<c0454a2c>] (dump_stack+0x80/0xcc)
@@ -20,11 +20,11 @@ Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
 [<c0008904>] (do_one_initcall) from [<c05f4d70>] (kernel_init_freeable+0x108/0x1d4)
 [<c05f4d70>] (kernel_init_freeable) from [<c0450ba4>] (kernel_init+0x8/0xec)
 [<c0450ba4>] (kernel_init) from [<c000e840>] (ret_from_fork+0x14/0x34)
----[ end trace 1518f58c0ba9f341 ]---
+---[ end trace caf93526749b3b36 ]---
 WARNING: CPU: 0 PID: 1 at ../drivers/dma/dmaengine.c:863 dma_async_device_register+0x280/0x494()
 this driver doesn't support generic slave capabilities reporting
 Modules linked in:
-CPU: 0 PID: 1 Comm: swapper/0 Tainted: G        W       4.0.0-rc1 #1
+CPU: 0 PID: 1 Comm: swapper/0 Tainted: G        W       4.0.0-rc2 #1
 Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
 [<c00142e4>] (unwind_backtrace) from [<c0010f44>] (show_stack+0x10/0x14)
 [<c0010f44>] (show_stack) from [<c0454a2c>] (dump_stack+0x80/0xcc)
@@ -43,4 +43,4 @@ Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
 [<c0008904>] (do_one_initcall) from [<c05f4d70>] (kernel_init_freeable+0x108/0x1d4)
 [<c05f4d70>] (kernel_init_freeable) from [<c0450ba4>] (kernel_init+0x8/0xec)
 [<c0450ba4>] (kernel_init) from [<c000e840>] (ret_from_fork+0x14/0x34)
----[ end trace 1518f58c0ba9f342 ]---
+---[ end trace caf93526749b3b37 ]---

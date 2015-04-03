@@ -1,10 +1,10 @@
 WARNING: CPU: 0 PID: 0 at ../arch/arm/kernel/devtree.c:144 arm_dt_init_cpu_maps+0x110/0x1e0()
 DT /cpu 5 nodes greater than max cores 4, capping them
-CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc1 #1
+CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc2 #1
 Hardware name: Allwinner sun9i Family
 [<c0013728>] (unwind_backtrace) from [<c0010ee4>] (show_stack+0x10/0x14)
-[<c0010ee4>] (show_stack) from [<c03a9d1c>] (dump_stack+0x74/0x90)
-[<c03a9d1c>] (dump_stack) from [<c001fe74>] (warn_slowpath_common+0x70/0xac)
+[<c0010ee4>] (show_stack) from [<c03a9d3c>] (dump_stack+0x74/0x90)
+[<c03a9d3c>] (dump_stack) from [<c001fe74>] (warn_slowpath_common+0x70/0xac)
 [<c001fe74>] (warn_slowpath_common) from [<c001ff0c>] (warn_slowpath_fmt+0x30/0x40)
 [<c001ff0c>] (warn_slowpath_fmt) from [<c04a5f48>] (arm_dt_init_cpu_maps+0x110/0x1e0)
 [<c04a5f48>] (arm_dt_init_cpu_maps) from [<c04a5414>] (setup_arch+0x634/0x8d4)

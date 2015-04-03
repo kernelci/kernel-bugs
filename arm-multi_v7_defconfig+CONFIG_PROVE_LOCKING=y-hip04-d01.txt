@@ -1,14 +1,14 @@
 WARNING: CPU: 0 PID: 0 at ../arch/arm/kernel/devtree.c:144 arm_dt_init_cpu_maps+0x118/0x1e8()
 DT /cpu 9 nodes greater than max cores 8, capping them
 Modules linked in:
-CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc1 #1
+CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc2 #1
 Hardware name: Hisilicon HiP04 (Flattened Device Tree)
-[<c0215f5c>] (unwind_backtrace) from [<c02119bc>] (show_stack+0x10/0x14)
-[<c02119bc>] (show_stack) from [<c0951104>] (dump_stack+0x78/0x94)
-[<c0951104>] (dump_stack) from [<c0247810>] (warn_slowpath_common+0x74/0xb0)
-[<c0247810>] (warn_slowpath_common) from [<c02478e0>] (warn_slowpath_fmt+0x30/0x40)
-[<c02478e0>] (warn_slowpath_fmt) from [<c0d1e3d4>] (arm_dt_init_cpu_maps+0x118/0x1e8)
-[<c0d1e3d4>] (arm_dt_init_cpu_maps) from [<c0d1d2dc>] (setup_arch+0x638/0x9a0)
-[<c0d1d2dc>] (setup_arch) from [<c0d1a940>] (start_kernel+0x94/0x3cc)
-[<c0d1a940>] (start_kernel) from [<10208074>] (0x10208074)
+[<c0216cdc>] (unwind_backtrace) from [<c021273c>] (show_stack+0x10/0x14)
+[<c021273c>] (show_stack) from [<c0987ac4>] (dump_stack+0x78/0x94)
+[<c0987ac4>] (dump_stack) from [<c024c510>] (warn_slowpath_common+0x74/0xb0)
+[<c024c510>] (warn_slowpath_common) from [<c024c5e0>] (warn_slowpath_fmt+0x30/0x40)
+[<c024c5e0>] (warn_slowpath_fmt) from [<c0d963d4>] (arm_dt_init_cpu_maps+0x118/0x1e8)
+[<c0d963d4>] (arm_dt_init_cpu_maps) from [<c0d952dc>] (setup_arch+0x638/0x9a0)
+[<c0d952dc>] (setup_arch) from [<c0d92940>] (start_kernel+0x94/0x3cc)
+[<c0d92940>] (start_kernel) from [<10208074>] (0x10208074)
 ---[ end trace cb88537fdc8fa200 ]---
