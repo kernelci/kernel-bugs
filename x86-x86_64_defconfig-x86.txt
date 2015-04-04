@@ -2,38 +2,38 @@ WARNING: CPU: 0 PID: 0 at ../drivers/iommu/dmar.c:829 warn_invalid_dmar+0x8a/0xa
 Your BIOS is broken; DMAR reported at address 0!
 BIOS vendor: American Megatrends Inc.; Ver: V1.1; Product Version: 1.0
 Modules linked in:
-CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc5 #1
+CPU: 0 PID: 0 Comm: swapper Not tainted 4.0.0-rc6 #1
 Hardware name: MSI MS-7850/Z87-G41 PC Mate(MS-7850), BIOS V1.1 04/26/2013
-000000000000033d ffffffff81e03d48 ffffffff81881e49 000000000000000e
+000000000000033d ffffffff81e03d48 ffffffff81881f69 000000000000000e
 ffffffff81e03d98 ffffffff81e03d88 ffffffff8104f2b2 0000000000001000
 ffffffff820d201c ffffffff820d203c ffffffffff200810 ffffffff81e03eb0
 Call Trace:
-[<ffffffff81881e49>] dump_stack+0x45/0x57
+[<ffffffff81881f69>] dump_stack+0x45/0x57
 [<ffffffff8104f2b2>] warn_slowpath_common+0x92/0xd0
 [<ffffffff8104f34a>] warn_slowpath_fmt_taint+0x3a/0x40
-[<ffffffff8187c85b>] ? acpi_os_map_iomem+0x23/0x14d
-[<ffffffff813e1ada>] warn_invalid_dmar+0x8a/0xa0
-[<ffffffff8138bca0>] ? acpi_tb_acquire_table+0x39/0x66
-[<ffffffff8187cb7c>] dmar_validate_one_drhd+0xdc/0x100
-[<ffffffff813e176a>] dmar_walk_remapping_entries+0x2a/0x140
+[<ffffffff8187c97b>] ? acpi_os_map_iomem+0x23/0x14d
+[<ffffffff813e1b6a>] warn_invalid_dmar+0x8a/0xa0
+[<ffffffff8138bd30>] ? acpi_tb_acquire_table+0x39/0x66
+[<ffffffff8187cc9c>] dmar_validate_one_drhd+0xdc/0x100
+[<ffffffff813e17fa>] dmar_walk_remapping_entries+0x2a/0x140
 [<ffffffff81f2f728>] detect_intel_iommu+0x52/0xd1
-[<ffffffff8187caa0>] ? acpi_os_unmap_memory+0xf/0xf
+[<ffffffff8187cbc0>] ? acpi_os_unmap_memory+0xf/0xf
 [<ffffffff81ef53dc>] pci_iommu_alloc+0x44/0x6e
 [<ffffffff81f02b5f>] mem_init+0x11/0x88
 [<ffffffff81eefdb8>] start_kernel+0x207/0x423
 [<ffffffff81eef9b1>] ? set_init_arg+0x55/0x55
 [<ffffffff81eef5b2>] x86_64_start_reservations+0x2a/0x2c
 [<ffffffff81eef6b4>] x86_64_start_kernel+0x100/0x107
----[ end trace c0a83a0fa2678c69 ]---
+---[ end trace 153a2a8db79213a2 ]---
 WARNING: CPU: 3 PID: 1 at ../arch/x86/mm/init.c:658 free_init_pages+0xb3/0xc0()
 Modules linked in:
-CPU: 3 PID: 1 Comm: swapper/0 Tainted: G          I     4.0.0-rc5 #1
+CPU: 3 PID: 1 Comm: swapper/0 Tainted: G          I     4.0.0-rc6 #1
 Hardware name: MSI MS-7850/Z87-G41 PC Mate(MS-7850), BIOS V1.1 04/26/2013
-0000000000000292 ffff880216157db8 ffffffff81881e49 00000000000000f8
-0000000000000000 ffff880216157df8 ffffffff8104f2b2 ffff88021623b410
-ffff88007fe38fff ffff880080000000 ffffffff81bc0957 ffff88007fe39000
+0000000000000292 ffff880216157db8 ffffffff81881f69 00000000000000f8
+0000000000000000 ffff880216157df8 ffffffff8104f2b2 ffff880216157dd8
+ffff88007fe38fff ffff880080000000 ffffffff81bc096f ffff88007fe39000
 Call Trace:
-[<ffffffff81881e49>] dump_stack+0x45/0x57
+[<ffffffff81881f69>] dump_stack+0x45/0x57
 [<ffffffff8104f2b2>] warn_slowpath_common+0x92/0xd0
 [<ffffffff8104f305>] warn_slowpath_null+0x15/0x20
 [<ffffffff81041bf3>] free_init_pages+0xb3/0xc0
@@ -43,8 +43,8 @@ Call Trace:
 [<ffffffff810002d9>] do_one_initcall+0x89/0x1b0
 [<ffffffff81ef0115>] kernel_init_freeable+0x141/0x1da
 [<ffffffff81eef902>] ? do_early_param+0x86/0x86
-[<ffffffff8187b230>] ? rest_init+0x80/0x80
-[<ffffffff8187b239>] kernel_init+0x9/0xf0
-[<ffffffff8188b888>] ret_from_fork+0x58/0x90
-[<ffffffff8187b230>] ? rest_init+0x80/0x80
----[ end trace c0a83a0fa2678c6a ]---
+[<ffffffff8187b350>] ? rest_init+0x80/0x80
+[<ffffffff8187b359>] kernel_init+0x9/0xf0
+[<ffffffff8188b988>] ret_from_fork+0x58/0x90
+[<ffffffff8187b350>] ? rest_init+0x80/0x80
+---[ end trace 153a2a8db79213a3 ]---

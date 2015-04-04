@@ -4,8 +4,8 @@ Modules linked in:
 CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc6 #1
 Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
 [<c021695c>] (unwind_backtrace) from [<c02123dc>] (show_stack+0x10/0x14)
-[<c02123dc>] (show_stack) from [<c09653dc>] (dump_stack+0x78/0x94)
-[<c09653dc>] (dump_stack) from [<c024c54c>] (warn_slowpath_common+0x74/0xb0)
+[<c02123dc>] (show_stack) from [<c0965550>] (dump_stack+0x78/0x94)
+[<c0965550>] (dump_stack) from [<c024c54c>] (warn_slowpath_common+0x74/0xb0)
 [<c024c54c>] (warn_slowpath_common) from [<c024c61c>] (warn_slowpath_fmt+0x30/0x40)
 [<c024c61c>] (warn_slowpath_fmt) from [<c050e1ec>] (dma_async_device_register+0x280/0x498)
 [<c050e1ec>] (dma_async_device_register) from [<c0d4722c>] (d40_probe+0xd6c/0x13ec)
@@ -18,17 +18,17 @@ Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
 [<c05e9430>] (driver_register) from [<c05e9f80>] (__platform_driver_probe+0x20/0xa4)
 [<c05e9f80>] (__platform_driver_probe) from [<c0209a64>] (do_one_initcall+0x80/0x1d0)
 [<c0209a64>] (do_one_initcall) from [<c0d08d6c>] (kernel_init_freeable+0x10c/0x1d8)
-[<c0d08d6c>] (kernel_init_freeable) from [<c0960734>] (kernel_init+0x8/0xec)
-[<c0960734>] (kernel_init) from [<c020f780>] (ret_from_fork+0x14/0x34)
----[ end trace f4dd80313577d4b9 ]---
+[<c0d08d6c>] (kernel_init_freeable) from [<c09608a8>] (kernel_init+0x8/0xec)
+[<c09608a8>] (kernel_init) from [<c020f780>] (ret_from_fork+0x14/0x34)
+---[ end trace f5444c172260240a ]---
 WARNING: CPU: 0 PID: 1 at ../drivers/dma/dmaengine.c:863 dma_async_device_register+0x280/0x498()
 this driver doesn't support generic slave capabilities reporting
 Modules linked in:
 CPU: 0 PID: 1 Comm: swapper/0 Tainted: G        W       4.0.0-rc6 #1
 Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
 [<c021695c>] (unwind_backtrace) from [<c02123dc>] (show_stack+0x10/0x14)
-[<c02123dc>] (show_stack) from [<c09653dc>] (dump_stack+0x78/0x94)
-[<c09653dc>] (dump_stack) from [<c024c54c>] (warn_slowpath_common+0x74/0xb0)
+[<c02123dc>] (show_stack) from [<c0965550>] (dump_stack+0x78/0x94)
+[<c0965550>] (dump_stack) from [<c024c54c>] (warn_slowpath_common+0x74/0xb0)
 [<c024c54c>] (warn_slowpath_common) from [<c024c61c>] (warn_slowpath_fmt+0x30/0x40)
 [<c024c61c>] (warn_slowpath_fmt) from [<c050e1ec>] (dma_async_device_register+0x280/0x498)
 [<c050e1ec>] (dma_async_device_register) from [<c0d47330>] (d40_probe+0xe70/0x13ec)
@@ -41,6 +41,6 @@ Hardware name: ST-Ericsson Ux5x0 platform (Device Tree Support)
 [<c05e9430>] (driver_register) from [<c05e9f80>] (__platform_driver_probe+0x20/0xa4)
 [<c05e9f80>] (__platform_driver_probe) from [<c0209a64>] (do_one_initcall+0x80/0x1d0)
 [<c0209a64>] (do_one_initcall) from [<c0d08d6c>] (kernel_init_freeable+0x10c/0x1d8)
-[<c0d08d6c>] (kernel_init_freeable) from [<c0960734>] (kernel_init+0x8/0xec)
-[<c0960734>] (kernel_init) from [<c020f780>] (ret_from_fork+0x14/0x34)
----[ end trace f4dd80313577d4ba ]---
+[<c0d08d6c>] (kernel_init_freeable) from [<c09608a8>] (kernel_init+0x8/0xec)
+[<c09608a8>] (kernel_init) from [<c020f780>] (ret_from_fork+0x14/0x34)
+---[ end trace f5444c172260240b ]---

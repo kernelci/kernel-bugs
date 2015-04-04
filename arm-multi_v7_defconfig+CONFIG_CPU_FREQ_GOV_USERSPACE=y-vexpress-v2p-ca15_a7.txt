@@ -3,8 +3,8 @@ Modules linked in:
 CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.0.0-rc6 #1
 Hardware name: ARM-Versatile Express
 [<c021695c>] (unwind_backtrace) from [<c02123dc>] (show_stack+0x10/0x14)
-[<c02123dc>] (show_stack) from [<c09653dc>] (dump_stack+0x78/0x94)
-[<c09653dc>] (dump_stack) from [<c024c54c>] (warn_slowpath_common+0x74/0xb0)
+[<c02123dc>] (show_stack) from [<c0965550>] (dump_stack+0x78/0x94)
+[<c0965550>] (dump_stack) from [<c024c54c>] (warn_slowpath_common+0x74/0xb0)
 [<c024c54c>] (warn_slowpath_common) from [<c024c5a4>] (warn_slowpath_null+0x1c/0x24)
 [<c024c5a4>] (warn_slowpath_null) from [<c0619380>] (vexpress_sysreg_probe+0x10c/0x148)
 [<c0619380>] (vexpress_sysreg_probe) from [<c05ea0a4>] (platform_drv_probe+0x48/0xa4)
@@ -15,6 +15,6 @@ Hardware name: ARM-Versatile Express
 [<c05e843c>] (bus_add_driver) from [<c05e9430>] (driver_register+0x78/0xf4)
 [<c05e9430>] (driver_register) from [<c0209a64>] (do_one_initcall+0x80/0x1d0)
 [<c0209a64>] (do_one_initcall) from [<c0d08d6c>] (kernel_init_freeable+0x10c/0x1d8)
-[<c0d08d6c>] (kernel_init_freeable) from [<c0960734>] (kernel_init+0x8/0xec)
-[<c0960734>] (kernel_init) from [<c020f780>] (ret_from_fork+0x14/0x34)
----[ end trace 33cd616107868020 ]---
+[<c0d08d6c>] (kernel_init_freeable) from [<c09608a8>] (kernel_init+0x8/0xec)
+[<c09608a8>] (kernel_init) from [<c020f780>] (ret_from_fork+0x14/0x34)
+---[ end trace 0124bbcb30357949 ]---

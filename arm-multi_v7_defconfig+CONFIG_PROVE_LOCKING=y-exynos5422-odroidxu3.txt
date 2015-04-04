@@ -1,19 +1,19 @@
-WARNING: CPU: 1 PID: 0 at ../kernel/locking/lockdep.c:2744 lockdep_trace_alloc+0xec/0x118()
+WARNING: CPU: 1 PID: 0 at ../kernel/locking/lockdep.c:2741 lockdep_trace_alloc+0xec/0x118()
 DEBUG_LOCKS_WARN_ON(irqs_disabled_flags(flags))
 Modules linked in:
-CPU: 1 PID: 0 Comm: swapper/1 Not tainted 4.0.0-rc5 #1
+CPU: 1 PID: 0 Comm: swapper/1 Not tainted 4.0.0-rc6 #1
 Hardware name: SAMSUNG EXYNOS (Flattened Device Tree)
 [<c0216cdc>] (unwind_backtrace) from [<c021273c>] (show_stack+0x10/0x14)
-[<c021273c>] (show_stack) from [<c09888d4>] (dump_stack+0x78/0x94)
-[<c09888d4>] (dump_stack) from [<c024c510>] (warn_slowpath_common+0x74/0xb0)
-[<c024c510>] (warn_slowpath_common) from [<c024c5e0>] (warn_slowpath_fmt+0x30/0x40)
-[<c024c5e0>] (warn_slowpath_fmt) from [<c0286020>] (lockdep_trace_alloc+0xec/0x118)
-[<c0286020>] (lockdep_trace_alloc) from [<c0305184>] (kmem_cache_alloc+0x20/0x118)
-[<c0305184>] (kmem_cache_alloc) from [<c0290490>] (request_threaded_irq+0x84/0x14c)
-[<c0290490>] (request_threaded_irq) from [<c082ab90>] (exynos4_local_timer_setup+0xc8/0x144)
-[<c082ab90>] (exynos4_local_timer_setup) from [<c082aca4>] (exynos4_mct_cpu_notify+0x28/0x8c)
-[<c082aca4>] (exynos4_mct_cpu_notify) from [<c0265e04>] (notifier_call_chain+0x44/0x84)
-[<c0265e04>] (notifier_call_chain) from [<c024c644>] (__cpu_notify+0x28/0x44)
-[<c024c644>] (__cpu_notify) from [<c0215164>] (secondary_start_kernel+0xe4/0x134)
+[<c021273c>] (show_stack) from [<c0988d74>] (dump_stack+0x78/0x94)
+[<c0988d74>] (dump_stack) from [<c024c588>] (warn_slowpath_common+0x74/0xb0)
+[<c024c588>] (warn_slowpath_common) from [<c024c658>] (warn_slowpath_fmt+0x30/0x40)
+[<c024c658>] (warn_slowpath_fmt) from [<c02863e4>] (lockdep_trace_alloc+0xec/0x118)
+[<c02863e4>] (lockdep_trace_alloc) from [<c0305694>] (kmem_cache_alloc+0x20/0x118)
+[<c0305694>] (kmem_cache_alloc) from [<c02908b0>] (request_threaded_irq+0x84/0x14c)
+[<c02908b0>] (request_threaded_irq) from [<c082b01c>] (exynos4_local_timer_setup+0xc8/0x144)
+[<c082b01c>] (exynos4_local_timer_setup) from [<c082b130>] (exynos4_mct_cpu_notify+0x28/0x8c)
+[<c082b130>] (exynos4_mct_cpu_notify) from [<c0265e7c>] (notifier_call_chain+0x44/0x84)
+[<c0265e7c>] (notifier_call_chain) from [<c024c6bc>] (__cpu_notify+0x28/0x44)
+[<c024c6bc>] (__cpu_notify) from [<c0215164>] (secondary_start_kernel+0xe4/0x134)
 [<c0215164>] (secondary_start_kernel) from [<402098a4>] (0x402098a4)
----[ end trace 0d48b381bd59cfac ]---
+---[ end trace 188c90f70753bd46 ]---
